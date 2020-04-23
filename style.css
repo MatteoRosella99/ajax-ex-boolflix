@@ -1,4 +1,8 @@
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .stelle li{
   display: inline-block;
   color: grey;
@@ -6,7 +10,25 @@
 .nero i{
   color:black;
 }
-img{
+.bandiere{
   height: 20px;
   width: auto;
+}
+.copertina{
+  height: 250px;
+  width: 190px;
+  background-color: red;
+}
+.copertina img{
+  height: 100%;
+  width: 100%;
+}
+.sezione{
+  float: left;
+  width: 14.28%;
+  padding: 20px;
+  height: 400px;
+}
+ul{
+  list-style-type: none;
 }

@@ -8,7 +8,6 @@
   </head>
   <body>
 
-<img src="" alt="">
 
 
     <input type="text" name="" value="" class="inp">
@@ -18,12 +17,17 @@
     </div>
 
     <script class="template" type="text/x-handlebars-template">
-      <ul>
-        <li>Titolo : {{titolo}}</li>
-        <li>Titolo originale : {{original}}</li>
-        <li>Lingua : <img src="bandiere/{{{lingua}}}.png" alt="{{{lingua}}}"></li>
-        <li>Votazione : {{voto}}</li>
-      </ul>
+      <div class="sezione">
+        <div class="copertina">
+          <img src="https://image.tmdb.org/t/p/w185{{{img}}}" alt="">
+        </div>
+        <ul>
+          <li>Titolo : {{titolo}}</li>
+          <li>Titolo originale : {{original}}</li>
+          <li>Lingua : <img class="bandiere" src="bandiere/{{{lingua}}}.png" alt="{{{lingua}}}"></li>
+          <li>Votazione {{{voto}}}</li>
+        </ul>
+      </div>
     </script>
 
 
