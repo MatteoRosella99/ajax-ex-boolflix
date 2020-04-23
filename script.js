@@ -1,5 +1,10 @@
+var source = $('.template').html();
+var template = Handlebars.compile(source);
+var pag = $('.film')
+
 $('.but').click(
   function(){
+    pag.html("")
     var ricerca = $('.inp').val()
     console.log(ricerca);
     $.ajax({
@@ -8,12 +13,31 @@ $('.but').click(
       dataType: "json",
       data: {
         api_key: "c58c24c4776c99826b097e0cf5a38c20",
-        query: ricerca,
+        query: ricerca
       },
       success: function (data){
         var risultati = data.results
         for (var i = 0; i < risultati.length; i++) {
-          $('.film').append('<ul><li>' + risultati[i].title + '</li><li>' + risultati[i].original_title + '</li><li>' + risultati[i].original_language + '</li><li>' + risultati[i].vote_average + '</li></ul>')
+          var stelle = risultati[i].vote_average / 2
+          console.log(stelle);
+          var stellestringa = []
+          for (var x = 0; x < 5; x++) {
+            if (x < stelle) {
+              stellestringa.push($('<li><i class="far fa-star"></i></li>'))
+            }
+            else{
+              stellestringa.push($('<li><i class="fas fa-star"></i></li>'))
+            }
+          }
+          console.log(stellestringa);
+          var context = {
+            titolo: risultati[i].title,
+            original: risultati[i].original_title,
+            lingua: risultati[i].original_language,
+            voto: stellestringa
+          }
+          var html = template(context)
+          $('.film').append(html)
         }
       },
       error: function(richiesta, stato, errori){

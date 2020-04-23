@@ -1,0 +1,12 @@
+
+.stelle li{
+  display: inline-block;
+  color: grey;
+}
+.nero i{
+  color:black;
+}
+img{
+  height: 20px;
+  width: auto;
+}

@@ -4,15 +4,32 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
   </head>
   <body>
+
+<img src="" alt="">
 
 
     <input type="text" name="" value="" class="inp">
     <button type="button" name="button" class="but">RICERCA</button>
     <div class="film">
+
     </div>
+
+    <script class="template" type="text/x-handlebars-template">
+      <ul>
+        <li>Titolo : {{titolo}}</li>
+        <li>Titolo originale : {{original}}</li>
+        <li>Lingua : <img src="bandiere/{{{lingua}}}.png" alt="{{{lingua}}}"></li>
+        <li>Votazione : {{voto}}</li>
+      </ul>
+    </script>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
