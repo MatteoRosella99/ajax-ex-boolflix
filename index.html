@@ -5,27 +5,30 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
   </head>
   <body>
-
-
-
-    <input type="text" name="" value="" class="inp">
+<strong></strong>
+  <div class="fixed">
+    <h1>BoolFlix</h1>
     <button type="button" name="button" class="but">RICERCA</button>
-    <div class="film">
-
-    </div>
+    <input type="text" name="" value="" class="inp">
+  </div>
+  <div class="film">
+  </div>
 
     <script class="template" type="text/x-handlebars-template">
       <div class="sezione">
         <div class="copertina">
-          <img src="https://image.tmdb.org/t/p/w185{{{img}}}" alt="">
+          <img src="https://image.tmdb.org/t/p/w185{{{img}}}" alt="{{titolo}}">
         </div>
         <ul>
-          <li>Titolo : {{titolo}}</li>
-          <li>Titolo originale : {{original}}</li>
-          <li>Lingua : <img class="bandiere" src="bandiere/{{{lingua}}}.png" alt="{{{lingua}}}"></li>
-          <li>Votazione {{{voto}}}</li>
+          <li><strong>Titolo</strong> : {{titolo}}</li>
+          <li><strong>Titolo originale</strong> : {{original}}</li>
+          <li><strong>Lingua</strong> : <img class="bandiere" src="bandiere/{{{lingua}}}.png" alt="{{{lingua}}}"></li>
+          <li><strong>Votazione</strong> : {{{voto}}}</li>
+          <li><strong>Tipologia</strong> : {{tipologia}}</li>
+          <li class="descrizione" maxlength = "11">{{descrizione}}</li>
         </ul>
       </div>
     </script>

@@ -32,7 +32,7 @@ $('.but').click(
       },
       success: function(data){
         var risultati = data.results
-        operazione(risultati, "tv")
+        operazione(risultati, "serie tv")
       },
       error: function(richiesta, stato, errori){
       }
@@ -44,7 +44,7 @@ function operazione(risultati, tipo, stellestringa, voto){
       title = risultati[i].title
       original = risultati[i].original_title
     }
-    else if(tipo === "tv"){
+    else if(tipo === "serie tv"){
       title = risultati[i].name
       original = risultati[i].original_name
     }
@@ -53,7 +53,9 @@ function operazione(risultati, tipo, stellestringa, voto){
       original: original,
       lingua: risultati[i].original_language,
       voto: stelline(risultati[i].vote_average),
-      img: risultati[i].poster_path
+      img: risultati[i].poster_path,
+      tipologia: tipo,
+      descrizione: risultati[i].overview
     }
     console.log(context);
     var html = template(context)
